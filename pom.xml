@@ -11,6 +11,7 @@
     <groupId>com.pluralsight</groupId>
     <artifactId>conference-mvc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>conference-mvc</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -20,6 +21,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- This is to remove the dependencies on the internal packaged application
+             and convert this over to where we not have our own standalone Tomcat-enabled WAR-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
